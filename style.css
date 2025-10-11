@@ -267,3 +267,10 @@ footer {
   .hero p { font-size: 0.95rem; }
   .cta-btn { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
 }
+.about-text blockquote {
+  border-left: 4px solid var(--green);
+  padding-left: 1rem;
+  font-style: italic;
+  color: #ccc;
+  margin: 1rem 0;
+}
