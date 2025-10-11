@@ -1,4 +1,4 @@
-/* General Reset */
+/* RESET */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -8,11 +8,9 @@ body {
   scroll-behavior: smooth;
 }
 
-:root {
-  --green: #32CD32;
-}
+:root { --green: #32CD32; }
 
-/* Navbar */
+/* NAVBAR */
 .navbar {
   display: flex;
   justify-content: space-between;
@@ -28,14 +26,14 @@ body {
 .logo {
   color: var(--green);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   letter-spacing: 1px;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  gap: 1.8rem;
+  gap: 2rem;
 }
 
 .nav-links a {
@@ -49,10 +47,18 @@ body {
   color: var(--green);
 }
 
-/* Hero Section */
+/* MOBILE MENU */
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  color: var(--green);
+  cursor: pointer;
+}
+
+/* HERO */
 .hero {
   height: 100vh;
-  background: url('IVD\ MARKETING\ ENETRPRISE.png') no-repeat center center/cover;
+  background: url('IVD MARKETING ENETRPRISE.png') no-repeat center center/cover;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -61,15 +67,15 @@ body {
 }
 
 .hero-overlay {
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.7);
   padding: 3rem;
   border-radius: 10px;
   max-width: 800px;
+  margin: 0 1rem;
 }
 
 .hero h1 {
   font-size: 3rem;
-  font-weight: 700;
   color: var(--green);
 }
 
@@ -88,18 +94,14 @@ body {
   transition: 0.3s;
 }
 
-.cta-btn:hover {
-  background: #28b428;
-  color: white;
-}
+.cta-btn:hover { background: #28b428; color: white; }
 
-/* About Section */
+/* ABOUT */
 .about-section {
+  padding: 5rem 2rem;
+  background: #111;
   display: flex;
   justify-content: center;
-  align-items: center;
-  padding: 5rem 2rem;
-  background-color: #111;
 }
 
 .about-content {
@@ -109,26 +111,12 @@ body {
   max-width: 1100px;
 }
 
-.about-text {
-  flex: 1 1 500px;
-}
+.about-text { flex: 1 1 500px; }
+.about-text h2 { color: var(--green); margin-bottom: 1rem; }
+.about-image { flex: 1 1 400px; }
+.about-image img { width: 100%; border-radius: 10px; }
 
-.about-text h2 {
-  color: var(--green);
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-.about-image {
-  flex: 1 1 400px;
-}
-
-.about-image img {
-  width: 100%;
-  border-radius: 10px;
-}
-
-/* Services */
+/* SERVICES */
 .services {
   background: #000;
   padding: 5rem 2rem;
@@ -154,16 +142,10 @@ body {
   transition: transform 0.3s;
 }
 
-.service-card:hover {
-  transform: translateY(-5px);
-}
+.service-card:hover { transform: translateY(-5px); }
+.service-card img { width: 60px; margin-bottom: 1rem; }
 
-.service-card img {
-  width: 60px;
-  margin-bottom: 1rem;
-}
-
-/* Projects */
+/* PROJECTS */
 .projects {
   background: #111;
   padding: 5rem 2rem;
@@ -172,7 +154,7 @@ body {
 
 .project-gallery {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
 }
 
@@ -181,7 +163,7 @@ body {
   border-radius: 8px;
 }
 
-/* Testimonials */
+/* TESTIMONIALS */
 .testimonials {
   background: #000;
   padding: 5rem 2rem;
@@ -203,7 +185,7 @@ body {
   max-width: 350px;
 }
 
-/* Contact */
+/* CONTACT */
 .contact {
   background: #111;
   padding: 5rem 2rem;
@@ -223,6 +205,7 @@ body {
   padding: 0.8rem;
   border: none;
   border-radius: 5px;
+  font-size: 1rem;
 }
 
 .contact-form button {
@@ -236,15 +219,51 @@ body {
   transition: 0.3s;
 }
 
-.contact-form button:hover {
-  background: #28b428;
-  color: white;
-}
+.contact-form button:hover { background: #28b428; color: white; }
 
-/* Footer */
+/* FOOTER */
 footer {
   background: #000;
   text-align: center;
   padding: 1.5rem;
   font-size: 0.9rem;
+}
+
+/* RESPONSIVE DESIGN */
+@media (max-width: 992px) {
+  .hero h1 { font-size: 2.3rem; }
+  .hero p { font-size: 1rem; }
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+    position: absolute;
+    top: 65px;
+    right: 0;
+    background: rgba(0,0,0,0.95);
+    flex-direction: column;
+    width: 100%;
+    text-align: center;
+    padding: 1rem 0;
+  }
+
+  .nav-links.active { display: flex; }
+  .menu-toggle { display: block; }
+
+  .about-content { flex-direction: column; text-align: center; }
+  .about-image img { max-width: 90%; margin: auto; }
+
+  .service-grid, .project-gallery, .testimonial-cards {
+    grid-template-columns: 1fr;
+    flex-direction: column;
+  }
+
+  .hero { background-position: center; padding: 2rem; }
+}
+
+@media (max-width: 480px) {
+  .hero h1 { font-size: 1.8rem; }
+  .hero p { font-size: 0.95rem; }
+  .cta-btn { padding: 0.6rem 1.2rem; font-size: 0.9rem; }
 }
