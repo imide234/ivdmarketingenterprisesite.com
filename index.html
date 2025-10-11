@@ -5,7 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>IVD MARKETING ENTERPRISE | Digital Growth Solutions</title>
 
-  <!-- Google Site Verification (Google Search Console) -->
+  <!-- Google Site Verification -->
   <meta name="google-site-verification" content="google4c80f6e5f4eac65d" />
 
   <!-- Google tag (gtag.js - Google Analytics) -->
@@ -34,6 +34,9 @@
   <header>
     <nav class="navbar">
       <div class="logo">IVD MARKETING ENTERPRISE</div>
+      <div class="menu-toggle" id="mobile-menu">
+        ☰
+      </div>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#services">Solutions</a></li>
@@ -138,5 +141,15 @@
   <footer>
     <p>&copy; 2025 IVD MARKETING ENTERPRISE. All rights reserved. | Powered by Digital Excellence.</p>
   </footer>
+
+  <!-- Mobile Menu Toggle Script -->
+  <script>
+    const menu = document.getElementById('mobile-menu');
+    const navLinks = document.querySelector('.nav-links');
+    menu.addEventListener('click', () => {
+      navLinks.classList.toggle('active');
+      menu.classList.toggle('active');
+    });
+  </script>
 </body>
 </html>
