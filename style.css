@@ -1,236 +1,250 @@
-/* Reset & Global Styles */
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
+/* General Reset */
+* { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
   font-family: 'Poppins', sans-serif;
-  background: url('background-dark-cinematic.jpg') no-repeat center center/cover;
+  background-color: #000;
   color: white;
-  line-height: 1.6;
-  overflow-x: hidden;
+  scroll-behavior: smooth;
 }
 
-/* Brand Colors */
 :root {
-  --primary-green: #32CD32;
-  --white: #ffffff;
-  --black: #000000;
+  --green: #32CD32;
 }
 
-/* Navigation */
+/* Navbar */
 .navbar {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px;
-  background: rgba(0, 0, 0, 0.7);
+  padding: 1.2rem 3rem;
+  background: rgba(0, 0, 0, 0.8);
   position: fixed;
+  top: 0;
   width: 100%;
-  z-index: 1000;
+  z-index: 100;
 }
 
-.logo-text {
-  color: var(--primary-green);
-  font-size: 24px;
-  font-weight: bold;
-  text-transform: uppercase;
+.logo {
+  color: var(--green);
+  font-weight: 700;
+  font-size: 1.3rem;
+  letter-spacing: 1px;
 }
 
-.nav-menu {
+.nav-links {
   list-style: none;
   display: flex;
-  gap: 25px;
+  gap: 1.8rem;
 }
 
-.nav-link {
+.nav-links a {
   text-decoration: none;
-  color: var(--white);
+  color: white;
   font-weight: 500;
-  transition: color 0.3s;
+  transition: 0.3s;
 }
 
-.nav-link:hover {
-  color: var(--primary-green);
+.nav-links a:hover {
+  color: var(--green);
 }
 
 /* Hero Section */
 .hero {
   height: 100vh;
+  background: url('IVD\ MARKETING\ ENETRPRISE.png') no-repeat center center/cover;
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
   text-align: center;
+  position: relative;
+}
+
+.hero-overlay {
   background: rgba(0, 0, 0, 0.6);
-  padding: 0 20px;
+  padding: 3rem;
+  border-radius: 10px;
+  max-width: 800px;
 }
 
-.hero-content h1 {
-  font-size: 48px;
-  font-weight: bold;
-  margin-bottom: 20px;
+.hero h1 {
+  font-size: 3rem;
+  font-weight: 700;
+  color: var(--green);
 }
 
-.hero-content p {
-  font-size: 18px;
-  max-width: 700px;
-  margin: 0 auto 30px;
+.hero p {
+  font-size: 1.1rem;
+  margin: 1.5rem 0;
 }
 
-.cta-button {
-  background: var(--primary-green);
-  color: var(--white);
-  padding: 15px 30px;
-  border: none;
-  border-radius: 5px;
-  text-transform: uppercase;
-  font-weight: bold;
-  cursor: pointer;
-  transition: background 0.3s ease;
+.cta-btn {
+  background: var(--green);
+  color: black;
+  padding: 0.8rem 2rem;
+  border-radius: 6px;
   text-decoration: none;
+  font-weight: 700;
+  transition: 0.3s;
 }
 
-.cta-button:hover {
+.cta-btn:hover {
   background: #28b428;
+  color: white;
 }
 
 /* About Section */
 .about-section {
-  padding: 100px 20px;
-  background-color: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 5rem 2rem;
+  background-color: #111;
 }
 
-.section-title {
-  text-align: center;
-  font-size: 32px;
-  margin-bottom: 30px;
-  color: var(--primary-green);
+.about-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 3rem;
+  max-width: 1100px;
 }
 
-.section-intro {
-  text-align: center;
-  max-width: 800px;
-  margin: 0 auto 20px;
+.about-text {
+  flex: 1 1 500px;
 }
 
-.container {
-  max-width: 1000px;
-  margin: auto;
+.about-text h2 {
+  color: var(--green);
+  font-size: 2rem;
+  margin-bottom: 1rem;
 }
 
-ul {
-  margin-left: 20px;
-  list-style: disc;
+.about-image {
+  flex: 1 1 400px;
+}
+
+.about-image img {
+  width: 100%;
+  border-radius: 10px;
 }
 
 /* Services */
 .services {
-  padding: 100px 20px;
-  background: #111;
+  background: #000;
+  padding: 5rem 2rem;
+  text-align: center;
 }
 
-.service-list {
+.section-title {
+  color: var(--green);
+  font-size: 2rem;
+  margin-bottom: 2rem;
+}
+
+.service-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: 30px;
+  gap: 2rem;
 }
 
-.service-item {
-  background: #222;
-  padding: 20px;
-  border-left: 5px solid var(--primary-green);
+.service-card {
+  background: #111;
+  padding: 2rem;
+  border-radius: 10px;
+  transition: transform 0.3s;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+}
+
+.service-card img {
+  width: 60px;
+  margin-bottom: 1rem;
+}
+
+/* Projects */
+.projects {
+  background: #111;
+  padding: 5rem 2rem;
+  text-align: center;
+}
+
+.project-gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.project-gallery img {
+  width: 100%;
   border-radius: 8px;
 }
 
 /* Testimonials */
 .testimonials {
-  padding: 100px 20px;
   background: #000;
+  padding: 5rem 2rem;
   text-align: center;
 }
 
-.testimonial-list {
+.testimonial-cards {
   display: flex;
-  flex-direction: column;
-  gap: 30px;
-  max-width: 800px;
-  margin: auto;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
 }
 
-.testimonial-item {
+.testimonial-card {
   background: rgba(50, 205, 50, 0.1);
-  padding: 20px;
-  border-left: 3px solid var(--primary-green);
-  border-radius: 5px;
+  border-left: 4px solid var(--green);
+  padding: 1.5rem;
+  border-radius: 10px;
+  max-width: 350px;
 }
 
 /* Contact */
 .contact {
-  padding: 100px 20px;
   background: #111;
+  padding: 5rem 2rem;
   text-align: center;
 }
 
 .contact-form {
+  max-width: 600px;
+  margin: 2rem auto;
   display: flex;
   flex-direction: column;
-  gap: 20px;
-  max-width: 600px;
-  margin: auto;
+  gap: 1rem;
 }
 
 .contact-form input,
 .contact-form textarea {
-  padding: 15px;
-  border-radius: 5px;
+  padding: 0.8rem;
   border: none;
-  font-size: 16px;
+  border-radius: 5px;
 }
 
 .contact-form button {
-  background: var(--primary-green);
-  color: var(--white);
-  padding: 15px;
+  background: var(--green);
+  color: black;
+  font-weight: 700;
   border: none;
-  font-size: 16px;
-  font-weight: bold;
   border-radius: 5px;
+  padding: 0.8rem;
   cursor: pointer;
-  transition: background 0.3s ease;
+  transition: 0.3s;
 }
 
 .contact-form button:hover {
   background: #28b428;
+  color: white;
 }
 
 /* Footer */
 footer {
   background: #000;
-  color: var(--white);
   text-align: center;
-  padding: 20px;
-  font-size: 14px;
-}
-
-/* Animations */
-.hero, .about-section, .services, .testimonials, .contact {
-  animation: fadeIn 1.5s ease-in;
-}
-
-@keyframes fadeIn {
-  0% { opacity: 0; transform: translateY(20px); }
-  100% { opacity: 1; transform: translateY(0); }
-}
-
-@media (max-width: 768px) {
-  .hero-content h1 {
-    font-size: 32px;
-  }
-
-  .nav-menu {
-    flex-direction: column;
-    gap: 10px;
-  }
+  padding: 1.5rem;
+  font-size: 0.9rem;
 }
